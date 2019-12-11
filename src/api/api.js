@@ -1,13 +1,6 @@
 import Server from './server';
 
 class API extends Server{
-  /**
-   *  用途：上传图片
-   *  @url https://elm.cangdu.org/v1/addimg/shop
-   *  返回status为1表示成功
-   *  @method post
-   *  @return {promise}
-   */
   async uploadImg(params = {}){
     try{
       let result = await this.axios('post', '//elm.cangdu.org/v1/addimg/shop', params); 
@@ -26,14 +19,6 @@ class API extends Server{
       throw err;
     }
   }
-
-  /**
-   *  用途：获取记录数据
-   *  @url https://api.cangdu.org/shopro/data/record
-   *  返回http_code为200表示成功
-   *  @method get
-   *  @return {promise}
-   */
   async getRecord(params = {}){
     try{
       let result = await this.axios('get', `/shopro/data/record/${params.type}`); 
@@ -52,14 +37,6 @@ class API extends Server{
       throw err;
     }
   }
-
-  /**
-   *  用途：获取商品数据
-   *  @url https://api.cangdu.org/shopro/data/products
-   *  返回http_code为200表示成功
-   *  @method get
-   *  @return {promise}
-   */
   async getProduction(params = {}){
     try{
       let result = await this.axios('get', '/shopro/data/products', params); 
@@ -78,14 +55,6 @@ class API extends Server{
       throw err;
     }
   }
-
-  /**
-   *  用途：获取佣金数据
-   *  @url https://api.cangdu.org/shopro/data/balance
-   *  返回http_code为200表示成功
-   *  @method get
-   *  @return {promise}
-   */
   async getBalance(params = {}){
     try{
       let result = await this.axios('get', '/shopro/data/balance', params); 
